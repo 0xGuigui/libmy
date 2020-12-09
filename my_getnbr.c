@@ -14,13 +14,13 @@ int my_getnbr(char const *str)
     while (str[y] == 43 || str[y] == 45) {
         if (str[y] == 45)
             x = x * -1;
-        y = y + 1;
+        y++;
     }
     while (str[y] != '\0') {
         if (str[y] >= 48 && str[y] <= 57) {
             z = z * 10;
             z = z + str[y] - 48;
-            y = y + 1;
+            y++;
         }
         else
             return z * x;
