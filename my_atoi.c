@@ -16,8 +16,8 @@ int my_atoi(char *av)
         i++;
     }
     while (av[i] != '\0') {
-        i++;
         x = x * 10 + av[i] - 48;
+        i++;
     }
     return x * y;
 }
