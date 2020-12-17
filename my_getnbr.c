@@ -1,29 +1,30 @@
 /*
 ** EPITECH PROJECT, 2020
-** MyLib
+** libmy
 ** File description:
-** my_getnbr.c
+** my_getnbr
 */
+
+#include <stdlib.h>
 
 int my_getnbr(char const *str)
 {
-    int x = 1;
-    int y = 0;
-    int z = 0;
+    int i = 0;
+    int neg = 0;
+    int nb = 0;
 
-    while (str[y] == 43 || str[y] == 45) {
-        if (str[y] == 45)
-            x = x * -1;
-        y++;
+    while (str[i] < 47 || str[i] > 58) {
+        if (str[i] == 45)
+            neg++;
+        i++;
     }
-    while (str[y] != '\0') {
-        if (str[y] >= 48 && str[y] <= 57) {
-            z = z * 10;
-            z = z + str[y] - 48;
-            y++;
-        }
-        else
-            return z * x;
+    for (int count = i; str[i] > 47 && str[i] < 58; i++) {
+        if (i > count + 8)
+            return EXIT_SUCCESS;
+        nb = nb * 10;
+        nb = nb + (str[i] - 48);
     }
-    return z * x;
+    if (neg % 2 != 0)
+        nb = -nb;
+    return nb;
 }
