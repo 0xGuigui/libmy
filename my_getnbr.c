@@ -1,30 +1,42 @@
 /*
 ** EPITECH PROJECT, 2020
-** libmy
-** File description:
 ** my_getnbr
+** File description:
+** get nbr
 */
 
 #include <stdlib.h>
 
-int my_getnbr(char const *str)
+int ifneg(char const *str, int n)
 {
-    int i = 0;
-    int neg = 0;
+    if (str[n] == '-')
+        return (-1);
+    return (1);
+}
+
+int ifnumber(char const *str, int n, int minus)
+{
     int nb = 0;
 
-    while (str[i] < 47 || str[i] > 58) {
-        if (str[i] == 45)
-            neg++;
-        i++;
-    }
-    for (int count = i; str[i] > 47 && str[i] < 58; i++) {
-        if (i > count + 8)
-            return EXIT_SUCCESS;
+    for (int counter = 0; str[n] >= 48 && str[n] <= 57; counter++) {
+        if (counter >= 10)
+            return (0);
         nb = nb * 10;
-        nb = nb + (str[i] - 48);
+        nb = nb + (str[n] - 48);
+        n++;
     }
-    if (neg % 2 != 0)
-        nb = -nb;
-    return nb;
+    nb = nb * minus;
+    return (nb);
+}
+
+int my_getnbr(char const *str, int n)
+{
+    int minus = 1;
+
+    for (; str[n] != '\0'; n++) {
+        minus = minus * (ifneg(str, n));
+        if (str[n] >= '0' && str[n] <= '9')
+            return (ifnumber(str, n, minus));
+    }
+    return (0);
 }

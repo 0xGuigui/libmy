@@ -1,18 +1,14 @@
 /*
 ** EPITECH PROJECT, 2020
-** Libmy
-** File description:
 ** my_putstr
+** File description:
+** displaying string chars
 */
 
-void my_putchar(char c);
+#include "my.h"
+#include <unistd.h>
 
 void my_putstr(char const *str)
 {
-    int i = 0;
-
-    while (str[i] != '\0') {
-        my_putchar(str[i]);
-        i++;
-    }
+    write(1, str, my_strlen(str));
 }

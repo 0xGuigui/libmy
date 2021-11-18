@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2020
-** libmy
-** File description:
 ** my_putchar
+** File description:
+** printing a char
 */
 
 #include <unistd.h>

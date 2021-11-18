@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** my_swap
+** my_charswap
 ** File description:
-** swapping pointers
+** my_swap for characters
 */
 
-void my_swap(int *a, int *b)
+void my_charswap(char *a, char *b)
 {
-    int c;
+    char c;
 
     c = *a;
     *a = *b;

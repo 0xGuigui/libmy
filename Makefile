@@ -1,32 +1,69 @@
 ##
 ## EPITECH PROJECT, 2020
-## Makefile
+## make file
 ## File description:
-## makefile for whatever
+## making files
 ##
 
-SRC     =    whatever
+SRC 	=	my_find_prime_sup.c				\
+		my_is_prime.c						\
+		my_revstr.c							\
+		my_swap.c							\
+		my_getnbr.c							\
+		my_putchar.c						\
+		my_strcat.c							\
+		my_strlen.c							\
+		my_strncpy.c						\
+		my_compute_power_rec.c				\
+		my_put_nbr.c						\
+		my_strcmp.c							\
+		my_str_in_str.c						\
+		my_compute_square_root.c			\
+		my_isneg.c							\
+		my_putstr.c							\
+		my_strcpy.c							\
+		my_strncat.c						\
+		my_strdup.c							\
+		my_strswap.c						\
+		my_charswap.c						\
+		dop.c								\
+		my_strgetnbr.c						\
+		insert_str.c						\
+		my_printf.c							\
+		my_secprintf.c						\
+		my_ostrgetnbr.c						\
+		uint_to_str.c						\
+		int_to_str.c						\
+		my_putcharss.c						\
+		my_alpcmp.c							\
+		split.c								\
+		extract_str.c						\
+		isletter.c							\
+		clean_str.c							\
+		free_charss.c						\
+		my_charsslen.c						\
+		contain.c							\
+		no_malloc_strcat.c					\
+		my_eprintf.c						\
+		alnum.c								\
+		remove_char.c						\
+		my_charssdup.c
 
-OBJ     =    $(SRC:.c=.o)
+OBJ	=	$(SRC:.c=.o)
 
-NAME    =    whatever
+NAME	=	libmy.a
 
-CFLAGS    =    -lm -L./lib -lmy -I./include
+all:	$(NAME)
 
-all:    $(NAME)
-
-$(NAME):    $(OBJ)
-    make -C lib/my
-    gcc $(OBJ) -o $(NAME) $(CFLAGS)
-
-debug:
-    make -C lib/my
-    gcc $(SRC) lib/my/*.c -g -o $(NAME) $(CFLAGS)
+$(NAME):	$(OBJ)
+	ar rc $(NAME) $(OBJ)
+	cp $(NAME) ../
+	cp my.h ../../include/
 
 clean:
-    rm -f $(OBJ)
+	rm -f $(OBJ)
 
-fclean:clean
-    rm -f $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
-re:    fclean all
+re:     fclean all

@@ -1,41 +1,34 @@
 /*
 ** EPITECH PROJECT, 2020
-** MyLib
+** my_revstr
 ** File description:
-** my_revstr.c
+** reverse
 */
 
-int my_strlen(char *str)
+void my_otherswap(char *a, char *b)
 {
-    int x;
+    char c;
 
-    x = 0;
-    while (str[x] != '\0') {
-        x++;
-    }
-    return x;
-}
-
-void swap(char *x, char *y)
-{
-    char z;
-
-    z = *x;
-    *x = *y;
-    *y = z;
+    c = *b;
+    *b = *a;
+    *a = c;
 }
 
 char *my_revstr(char *str)
 {
-    int x;
-    int y;
+    int i = 0;
+    int d;
+    int e = 0;
 
-    y = 0;
-    x = my_strlen(str)-1;
-    while (x/2 > 0) {
-        swap(&str[y], &str[x]);
-        x--;
-        y++;
+    while (str[i] != '\0') {
+        i++;
     }
-    return str;
+    d = i/2;
+    i--;
+    while (e != d) {
+        my_otherswap(&str[e], &str[i]);
+        e++;
+        i--;
+    }
+    return (str);
 }

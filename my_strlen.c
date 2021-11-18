@@ -1,15 +1,14 @@
 /*
 ** EPITECH PROJECT, 2020
-** libmy
-** File description:
 ** my_strlen
+** File description:
+** string length
 */
 
-int my_strlen(char *str)
+int my_strlen(char const *str)
 {
-    int x = 0;
-    while (str[x] != '\0') {
-        x++;
-    }
-    return x;
+    int i = 0;
+
+    for (; str[i] != '\0'; i++);
+    return (i);
 }
