@@ -13,6 +13,3 @@ Namely that I do not intend to put only the lib that was created during the pool
 ### ⚠ Warning:
 
 I know you already know, but don't download the files, it's forbidden by the school. However you can use them as inspiration to make your own files and/or projects.
-
-## 📜 License
-This repo is under [MIT](https://choosealicense.com/licenses/mit/) license, take note of it before!
